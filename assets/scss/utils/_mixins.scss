@@ -1,0 +1,46 @@
+/* location */
+@mixin positionCenter {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin positionCenterHorizontal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin positionCenterVertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexCenterHorizontal {
+    display: flex;
+    justify-content: center;
+}
+@mixin flexCenterVertical {
+    display: flex;
+    align-items: center;
+}
+
+/* */
+@mixin ellipse2 {
+
+}
+
+/* responsive */
+@mixin mobile {
+    @media (max-width: 640px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1080px) {
+        @content;
+    }
+}

@@ -1,0 +1,100 @@
+.blind {
+    width: 1px; height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+body { overflow-x: hidden;}
+
+/* COMMON */
+
+.overflow { display: block; overflow: hidden; }
+.overflow .text { display: block;}
+
+.scroll-fix { overflow-y: hidden; }
+.mo-br { display: none; }
+.common-inner {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.visual-text {
+    font-family: $font-en2;
+    font-size: clamp(40px, 11vw, 140px);
+    line-height: 1;
+
+    // @include tablet{
+        
+    // }
+}
+.desc { line-height: 1.4; }
+
+
+
+
+/* link hover */
+.link-all { font-size: 16px; font-weight: 500; }
+.link-all::after { 
+    content: '';
+    position: absolute;
+    top: 100%; left: 0;
+    background-color: $color-black1;
+    width: 0; height: 2px;
+    transition: 0.3s;
+}
+.link-all:hover::after { width: 100%; }
+
+/* img link hover */
+.link {
+    &:hover .img-box::before { width: calc(100% + 5px); }
+    &:hover .img-box::after { height: calc(100% + 5px); }
+    &:hover .line::after { width: calc(100% + 5px); }
+    &:hover .line::before { height: calc(100% + 5px); }
+
+    .img-box { 
+        position: relative; 
+        
+        &::before {
+            content: '';
+            transition: 0.5s; 
+            position: absolute;
+            top: -5px; right: 0;
+            width: 0; height: 5px;
+            background-color: $color-black1;
+        }
+        &::after {
+            content: '';
+            transition: 0.5s; 
+            position: absolute;
+            top: 0; left: -5px;
+            width: 5px; height: 0px;
+            background-color: $color-black1;
+        }
+        
+    }
+    .line {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        transition: 0.5s;
+
+        &::before {
+            content: '';
+            transition: 0.5s; 
+            position: absolute;
+            bottom: 0; right: -5px;
+            width: 5px; 
+            height: 0;
+            background-color: $color-black1;
+        }
+        &::after {
+            content: '';
+            transition: 0.5s; 
+            position: absolute;
+            bottom: -5px; left: 0;
+            width: 0; 
+            height: 5px;
+            background-color: $color-black1;
+        }
+    }
+} 

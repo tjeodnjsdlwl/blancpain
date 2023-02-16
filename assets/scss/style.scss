@@ -1,0 +1,17 @@
+// utils
+@import './utils/variables';
+@import './utils/mixins';
+
+//base
+@import './base/typography';
+@import './base/_reset.scss';
+
+//componenets
+@import './components/buttons';
+
+//layout
+@import './base/common';
+@import './layout/header';
+@import './layout/footer';
+@import './layout/main';
+
